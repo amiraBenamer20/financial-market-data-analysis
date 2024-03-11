@@ -40,6 +40,7 @@ producer = KafkaProducer(bootstrap_servers=kafka_config['servers'],
 # Connect to MySQL server
 try:
     cnx = mysql.connector.connect(host=mysql_hostname, user=mysql_user, password=mysql_password)
+    print("Connection to the DB is establised!")
 except mysql.connector.Error as err:
     if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
         print("User name or password incorrect")
@@ -66,8 +67,9 @@ x_fields = ", ".join(db_x_query[fields_start_idx + 1: fields_end_idx]).strip(", 
 from_start_idx = db_x_query.index("FROM")
 from_statement = " ".join(db_x_query[from_start_idx:]).strip(";")
 
-# Load Pytorch model for Inference
-# Initialize parameters (use the same parameters except batch_size as during training)
+
+print("Load Pytorch model for Inference")
+print("Initialize parameters (use the same parameters except batch_size as during training")
 window = 5
 batch_size = 1
 hidden_size = 8

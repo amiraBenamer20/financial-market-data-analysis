@@ -3,8 +3,8 @@
 """
 import pytz
 
-tokens = {'av_token': '<Your-token>',
-    'iex_token': '<Your-token>'}
+tokens = {'av_token': 'TSJ71UPVPJAP9QFY',
+    'iex_token': 'pk_4fbe89bfedb34a198119c7e43c9947ef'}
 
 time_zone = {'EST': pytz.timezone('US/Eastern'),
     'UTC': pytz.timezone('UTC'),
@@ -18,10 +18,10 @@ kafka_config = {'servers':['localhost:9092'], 'topics': ['vix', 'volume', 'cot',
 user_agent = 'Mozilla/5.0 (X11; Linux x86_64; rv:69.0) Gecko/20100101 Firefox/69.0'
 
 # Database (MySQL/MariaDB) properties
-mysql_user = 'admin'
-mysql_password = 'admin'
+mysql_user = 'root'
+mysql_password = 'password'
 
-mysql_hostname = 'localhost'
+mysql_hostname = '127.0.0.1'
 mysql_port = '3306'
 
 mysql_database_name = 'stock_data'

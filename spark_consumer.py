@@ -1,6 +1,6 @@
 # Use findspark to import pyspark as a python module
 import findspark
-findspark.init('/root/spark-2.4.4-bin-hadoop2.7')
+findspark.init('/home/amira/Téléchargements/spark-2.4.7')  
 
 from pyspark.sql import SparkSession
 from pyspark.sql import types
@@ -9,8 +9,8 @@ from pyspark.sql.functions import udf
 from config import event_list_repl, event_values, mysql_user, mysql_password, kafka_config
 from config import mysql_database_name, mysql_table_name, mysql_hostname, mysql_port
 from config import get_cot, get_vix, get_stock_volume, bid_levels, ask_levels
-from kafka import SimpleClient
-from kafka.common import OffsetRequestPayload
+from kafka.client_async import KafkaClient
+from kafka.structs import OffsetAndTimestamp
 import logging
 
 mysql_driver = 'com.mysql.jdbc.Driver'
